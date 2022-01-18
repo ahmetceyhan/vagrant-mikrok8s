@@ -47,6 +47,7 @@ Ayrıca dashboard a girmek için 'microk8s dashboard-proxy' komutu kullanılabil
 	eyJhbGciOiJSUzI1NiIsImtpZCI6IjJWUVNvSnFWVjJlQTlVWl9tSEtPaG1KYnNtZ1pHYzRFcEZwQmtsWmRZdTAifQ.eyJpc3MiOiJrdWJlcm...
 
 Yararlı komutlar:
+
 	vagrant up                         -> vagrant ile makina oluşturur
 	vagrant global-status              -> vagrant global durumunu verir
 	vagrant halt {vagrant id}          -> kapatır
