@@ -1,10 +1,11 @@
 # vagrant-mikrok8s
 
-Sistemimizden izole bir geliştirme ortamına ihtiyaç duyduğumuzda imdadımıza koşan Vagrant kısaca 
-istediğimiz otamı istediğimiz içerik ile virtualbox üzerine hızlıca kurmamızı sağlar.
+Sistemimizden izole bir geliştirme ortamına ihtiyaç duyduğumuzda imdadımıza koşan Vagrant kısaca istediğimiz ortamı 
+istediğimiz içerik ile virtualbox üzerine hızlıca kurmamızı sağlar.
 
-Bir adet Vagrantfile oluşturur ve içerisinde istediğimiz konfigürasyonu yaparız. Tek bir komut 
-ile kurulumu tamamlarız.
+Bir adet Vagrantfile oluşturur ve içerisinde istediğimiz konfigürasyonu yaparız. Tek bir komut ile kurulumu tamamlarız.
+Hazırladığımız Vagrantfile ı birden fazla kez kullanabiliriz. Hatalı case denerken çöken sanal makinamızı silip tekrar 
+tek komut ile oluştururuz.
 
 Örnek olarak aşağıdaki Vagrantfile ile bir ubuntu sanal makinası ayağa kaldıralım. 
 
@@ -13,14 +14,12 @@ Gereksinimler:
     Vagrant: https://www.vagrantup.com/downloads
     Virtualbox: https://www.virtualbox.org/wiki/Downloads
 
-
 Adımlar:
 
     Ekteki dosya bir klasöre çıkartılır.
     Konsol açılır ve Vagrantfile ın olduğu klasöre gidilir.
     'vagrant up' komutu çalıştırılır.
-    'ssh vagrant@192.168.51.10' komutu ile ssh üzerinden oluşturulan ve ayağa kalkan makinaya bağlanılır.
-
+    'ssh vagrant@192.168.66.30' komutu ile ssh üzerinden oluşturulan ve ayağa kalkan makinaya bağlanılır.
 
 Sonuç olarak bir node ile ayağa kalktı sistemimiz:
 
@@ -38,7 +37,10 @@ Namespacelerimiz:
 	default           Active   10h
 	metallb-system    Active   10h
 
-Ayrıca dashboard a girmek için 'microk8s dashboard-proxy' komutu kullanılabilir. Tarayıcımızdan girebilmek için Vagrantfile da tanımlamasını yaptığımız private_network ip adresi ve aşağıda gözüken port girilmelidir(https://192.168.51.10:10443). Eğer doğru adres girildiği halde bağlanmıyorsa Virtualbox üzerinden bağlantı noktası yönlendirme kuralı eklemek gerekebilir. Konsolda verilen token ile dashboard a giriş yapılır.
+Ayrıca dashboard a girmek için 'microk8s dashboard-proxy' komutu kullanılabilir. Tarayıcımızdan girebilmek için Vagrantfile 
+da tanımlamasını yaptığımız private_network ip adresi ve aşağıda gözüken port girilmelidir(https://192.168.51.10:10443). 
+Eğer doğru adres girildiği halde bağlanmıyorsa Virtualbox üzerinden bağlantı noktası yönlendirme kuralı eklemek gerekebilir. 
+Konsolda çıkan token ile dashboard a giriş yapılır.
 
 	vagrant@ubuntu2004:~$ microk8s dashboard-proxy
 	Checking if Dashboard is running.
